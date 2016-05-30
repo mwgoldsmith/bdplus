@@ -36,6 +36,8 @@
 /* fseeko64() prototypes from stdio.h */
 #   undef __STRICT_ANSI__
 #   define fseeko fseeko64
+#elif defined(_MSC_VER)
+#   define fseeko _fseeki64
 #endif
 
 static void _file_close(BDPLUS_FILE_H *file)

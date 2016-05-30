@@ -37,6 +37,8 @@
 
 #if defined(__MINGW32__)
 #  define fseeko fseeko64
+#elif defined(_MSC_VER)
+#   define fseeko _fseeki64
 #endif
 
 /*
