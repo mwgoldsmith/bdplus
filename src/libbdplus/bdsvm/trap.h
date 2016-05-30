@@ -29,7 +29,9 @@ struct bdplus_config_s;
 struct sha_s;
 
 #define STATUS_OK                    0x00000000
+#if !defined(HAVE_LIBGPG_ERROR) && !defined(STATUS_INVALID_PARAMETER)
 #define STATUS_INVALID_PARAMETER     0x80000001
+#endif
 #define STATUS_NOT_SUPPORTED         0x80000002
 #define STATUS_INTERNAL_ERROR        0x80FFFFFF
 
